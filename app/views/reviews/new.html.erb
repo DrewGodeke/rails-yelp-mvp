@@ -1,3 +1,8 @@
 <!-- app/views/reviews/new.html.erb -->
 <h1>New Review for <%= @restaurant.name %></h1>
-<%= render 'form', review: @review %>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <!-- Form fields for the review -->
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.button :submit %>
+<% end %>
